@@ -1,4 +1,6 @@
 
+
+
 function testFunc() {
   let one = document.querySelectorAll('.mini');
   one.forEach((item) => {
@@ -19,11 +21,19 @@ function testFunc() {
       }
       document.getElementById('container').appendChild(div1)
     }
+
+    randomP = function () {
+      r = Math.floor(Math.random() * 255 + 100);
+      g = Math.floor(Math.random() * 255 + 100);
+      b = Math.floor(Math.random() * 255 + 100);
+      return 'rgb(' + r + ',' + g + ',' + b + ')';
+    };
+    
     
     const ballsack = document.querySelectorAll('.helo');
     ballsack.forEach((item) => {
       item.addEventListener('mouseover',(e) => {
-        e.target.classList.add('change');
+        e.target.style.backgroundColor = randomP();
       });
     });
   
